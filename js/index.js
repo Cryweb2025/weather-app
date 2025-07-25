@@ -63,7 +63,7 @@ async function fetchWeatherLocation(latitude, longitude) {
     precipitation_sum,
     precipitation_hours,
     precipitation_probability_max,
-    time
+    time,
   } = daily;
 
   const {
