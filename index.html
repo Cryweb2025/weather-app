@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google fonts end -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/baf54d64ce.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="title-logo">
+        <h1>Weather Broadcaster</h1>
+        <h3>Light</h3>
+      </div>
+      <div class="date-info">
+        <i class="fa-solid fa-calendar-days"></i>
+        <p id="current-date" class="date">2025-07-25</p>
+        <p id="is-don" class="don"></p>
+      </div>
+    </header>
+    <main>
+      <section class="info-1">
+        <p id="temperature" class="temp-info"></p>
+        <p id="weather-code" class="weather-code"></p>
+      </section>
+
+      <section class="city-info">
+        <i class="fa-solid fa-location-dot"></i>
+        <p id="city"></p>
+      </section>
+      <section class="today-info-section">
+        <div class="today-temp-max-min">
+          <div class="info-head">
+            <i class="fa-solid fa-temperature-empty"></i>
+            <h3>Temperature</h3>
+          </div>
+          <hr />
+          <p id="today-temp-max">Max:</p>
+          <p id="today-temp-min">Min:</p>
+        </div>
+
+        <div class="today-wind">
+          <div class="info-head">
+            <i class="fa-solid fa-wind"></i>
+            <h3>Wind</h3>
+          </div>
+          <hr />
+          <p id="wind">Current speed:</p>
+          <p id="gusts">Current gusts:</p>
+          <p id="wind-speed-max">Max speed:</p>
+          <p id="wind-gusts-max">Max gusts:</p>
+        </div>
+
+        <div class="today-rain">
+          <div class="info-head">
+            <i class="fa-solid fa-droplet"></i>
+            <h3>Precipitation</h3>
+          </div>
+          <hr />
+          <p id="rain-current">Rain current:</p>
+          <p id="pre-hours-today">Precipitation duration:</p>
+          <p id="pre-sum-today">Precipitation sum:</p>
+          <p id="pre-%-today">Max probability:</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; <span id="year"></span> Cryweb35. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

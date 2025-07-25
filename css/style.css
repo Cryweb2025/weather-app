@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #334477, #88aaff);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+header {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid white;
+  position: static;
+  top: 0px;
+}
+
+.title-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.title-logo > h1 {
+  font-size: large;
+  font-weight: 450;
+  color: white;
+}
+
+.title-logo > h3 {
+  font-size: x-small;
+  padding-bottom: 10px;
+  color: white;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.date-info {
+  color: white;
+  font-size: small;
+}
+
+main {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.info-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.date-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  float: right;
+}
+
+.info-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.temp-info {
+  color: white;
+  font-size: xx-large;
+  font-weight: 400;
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+.city-info {
+  color: white;
+  font-size: large;
+  margin-left: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+}
+
+.city-info > i {
+  font-size: medium;
+}
+
+.weather-code {
+  font-size: 22px;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.today-info-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.today-temp-max-min,
+.today-wind,
+.today-rain {
+  width: 250px;
+  height: auto;
+  display: flex;
+  color: white;
+  background-color: #506baf;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid black;
+  border-radius: 6px;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.today-temp-max-min > p,
+h3,
+.today-wind > p,
+h3,
+.today-rain > p,
+h3 {
+  font-size: large;
+  padding: 0px;
+  margin: 0;
+}
+
+.today-temp-max-min,
+.today-wind,
+.today-rain > h3 {
+  text-align: center;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  opacity: 0.5;
+  background-color: lightskyblue;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid white;
+  font-size: small;
+  color: black;
+  margin-top: 20px;
+}
