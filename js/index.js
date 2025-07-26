@@ -119,18 +119,18 @@ function checkWmoCode(weather_code) {
   let wmoValue;
   switch (weather_code) {
     case 0:
-      weatherImage.style.backgroundImage = "url('./assets/img/clear-sky.png')";
+      weatherImage.style.backgroundImage = "url('../assets/img/clear-sky.png')";
       return (wmoValue = "Clear sky");
     case 1:
       weatherImage.style.backgroundImage =
-        "url('./assets/img/mainly-clear.png')";
+        "url('../assets/img/mainly-clear.png')";
       return (wmoValue = "Mainly clear");
     case 2:
       weatherImage.style.backgroundImage =
-        "url('./assets/img/partly-cloudy.png')";
+        "url('../assets/img/partly-cloudy.png')";
       return (wmoValue = "Partly cloudy");
     case 3:
-      weatherImage.style.backgroundImage = "url('./assets/img/overcast.png')";
+      weatherImage.style.backgroundImage = "url('../assets/img/overcast.png')";
       return (wmoValue = "Overcast");
     case 45:
       return (wmoValue = "Fog");
@@ -147,15 +147,45 @@ function checkWmoCode(weather_code) {
     case 57:
       return (wmoValue = "Freezing Drizzle: Dense intensity");
     case 61:
+      weatherImage.style.backgroundImage =
+        "url('../assets/img/rain-slight.png')";
       return (wmoValue = "Rain: Slight");
     case 63:
+      weatherImage.style.backgroundImage =
+        "url('../assets/img/rain-moderate.png')";
       return (wmoValue = "Rain: Moderate");
     case 65:
+      weatherImage.style.backgroundImage =
+        "url('../assets/img/rain-heavy.png')";
       return (wmoValue = "Rain: Heavy intensity");
     case 66:
       return (wmoValue = "Freezing Rain: Light");
     case 67:
       return (wmoValue = "Freezing Rain: Heavy intensity");
+    case 71:
+      return (wmoValue = "Snow fall: Slight");
+    case 73:
+      return (wmoValue = "Snow fall: Moderate");
+    case 75:
+      return (wmoValue = "Snow fall: Heavy intensity");
+    case 77:
+      return (wmoValue = "Snow grains");
+    case 80:
+      return (wmoValue = "Rain showers: Slight");
+    case 81:
+      return (wmoValue = "Rain showers: Moderate");
+    case 82:
+      return (wmoValue = "Rain showers: Violent");
+    case 85:
+      return (wmoValue = "Snow showers slight");
+    case 86:
+      return (wmoValue = "Snow showers heavy");
+    case 95:
+      return (wmoValue = "Thunderstorm: Slight or moderate");
+    case 96:
+      return (wmoValue = "Thunderstorm with slight");
+    case 99:
+      return (wmoValue = "Thunderstorm: Heavy hail");
     default:
       return (wmoValue = "Error fetch weather code!");
   }
