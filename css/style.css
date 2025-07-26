@@ -32,6 +32,7 @@ header {
   position: sticky;
   top: 0px;
   background-color: #36487c;
+  z-index: 1;
 }
 
 .title-logo {
@@ -45,6 +46,10 @@ header {
   font-size: large;
   font-weight: 450;
   color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+  background: linear-gradient(to bottom, #ffffff, #7489c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .title-logo > h3 {
@@ -53,11 +58,16 @@ header {
   color: white;
   font-weight: 300;
   text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+  background: linear-gradient(to bottom, #ffffff, #3db9d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .date-info {
   color: white;
   font-size: small;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 main {
@@ -208,8 +218,8 @@ h3 {
 }
 
 .other-info {
-    color: white;
-    font-size: medium;
+  color: white;
+  font-size: medium;
 }
 
 hr {
@@ -256,5 +266,23 @@ footer .heart {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 355px) {
+  .title-logo > h1 {
+    font-size: small;
+    font-weight: 350;
+  }
+
+  .title-logo > h3 {
+    font-size: xx-small;
+    padding-bottom: 10px;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+
+  .date-info {
+    font-size: xx-small;
   }
 }
