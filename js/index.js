@@ -13,6 +13,9 @@ const todayPreProbability = document.getElementById("pre-%-today");
 const todayPreSum = document.getElementById("pre-sum-today");
 const currentDate = document.getElementById("current-date");
 const isDayOrNight = document.getElementById("is-don");
+const sunSet = document.getElementById("sunset");
+const sunRise = document.getElementById("sunrise");
+const weatherImage = document.getElementById("weather-img");
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -64,6 +67,8 @@ async function fetchWeatherLocation(latitude, longitude) {
     precipitation_hours,
     precipitation_probability_max,
     time,
+    sunset,
+    sunrise,
   } = daily;
 
   const {
@@ -72,6 +77,8 @@ async function fetchWeatherLocation(latitude, longitude) {
     precipitation_hours: preHoursUnit,
     precipitation_probability_max: preProMaxUnit,
     precipitation_sum: preSumUnit,
+    sunset: sunSetUnit,
+    sunrise: sunRiseUnit,
   } = daily_units;
 
   let wmo = checkWmoCode(weather_code);
@@ -101,6 +108,10 @@ async function fetchWeatherLocation(latitude, longitude) {
     " " + precipitation_probability_max[0] + " " + preProMaxUnit;
   todayPreSum.textContent += " " + precipitation_sum[0] + " " + preSumUnit;
 
+  // Sun today
+  sunRise.textContent = sunrise[0].split("T")[1] + " AM";
+  sunSet.textContent = sunset[0].split("T")[1] + " PM";
+
   //   console.log(wmo);
 }
 
@@ -108,12 +119,18 @@ function checkWmoCode(weather_code) {
   let wmoValue;
   switch (weather_code) {
     case 0:
+      weatherImage.style.backgroundImage = "url('../assets/img/clear-sky.png')";
       return (wmoValue = "Clear sky");
     case 1:
+      weatherImage.style.backgroundImage =
+        "url('../assets/img/mainly-clear.png')";
       return (wmoValue = "Mainly clear");
     case 2:
+      weatherImage.style.backgroundImage =
+        "url('../assets/img/partly-cloudy.png')";
       return (wmoValue = "Partly cloudy");
     case 3:
+      weatherImage.style.backgroundImage = "url('../assets/img/overcast.png')";
       return (wmoValue = "Overcast");
     case 45:
       return (wmoValue = "Fog");

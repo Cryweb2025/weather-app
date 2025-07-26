@@ -35,14 +35,18 @@
     </header>
     <main>
       <section class="info-1">
-        <p id="temperature" class="temp-info"></p>
-        <p id="weather-code" class="weather-code"></p>
+        <div class="temp-wthcode">
+          <p id="temperature" class="temp-info"></p>
+          <p id="weather-code" class="weather-code"></p>
+        </div>
+        <div class="weather-img" id="weather-img"></div>
       </section>
 
       <section class="city-info">
         <i class="fa-solid fa-location-dot"></i>
         <p id="city"></p>
       </section>
+
       <section class="today-info-section">
         <div class="today-temp-max-min">
           <div class="info-head">
@@ -76,6 +80,19 @@
           <p id="pre-hours-today">Precipitation duration:</p>
           <p id="pre-sum-today">Precipitation sum:</p>
           <p id="pre-%-today">Max probability:</p>
+        </div>
+
+        <div class="today-sun">
+          <div class="sunrise">
+            <p>Sunrise</p>
+            <img src="./assets/img/sunrise.png" alt="Sunrise" />
+            <span id="sunrise"></span>
+          </div>
+          <div class="sunset">
+            <p>Sunset</p>
+            <img src="./assets/img/sunset.png" alt="Sunset" />
+            <span id="sunset"></span>
+          </div>
         </div>
       </section>
     </main>
