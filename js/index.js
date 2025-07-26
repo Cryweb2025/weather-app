@@ -130,7 +130,7 @@ function checkWmoCode(weather_code) {
         "url('../assets/img/partly-cloudy.png')";
       return (wmoValue = "Partly cloudy");
     case 3:
-      weatherImage.style.backgroundImage = "url('../assets/img/overcast.png')";
+      weatherImage.style.backgroundImage = "url('/assets/img/overcast.png')";
       return (wmoValue = "Overcast");
     case 45:
       return (wmoValue = "Fog");
