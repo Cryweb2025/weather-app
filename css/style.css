@@ -47,7 +47,7 @@ header {
   font-weight: 450;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
-  background: linear-gradient(to bottom, #ffffff, #7489c4);
+  background: linear-gradient(to bottom, #ffffff, #bcc1d1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -59,7 +59,7 @@ header {
   font-weight: 300;
   text-transform: uppercase;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
-  background: linear-gradient(to bottom, #ffffff, #3db9d8);
+  background: linear-gradient(to bottom, #ffffff, #83c7e2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
