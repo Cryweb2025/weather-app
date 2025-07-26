@@ -119,18 +119,18 @@ function checkWmoCode(weather_code) {
   let wmoValue;
   switch (weather_code) {
     case 0:
-      weatherImage.style.backgroundImage = "url('/assets/img/clear-sky.png')";
+      weatherImage.style.backgroundImage = "url('./assets/img/clear-sky.png')";
       return (wmoValue = "Clear sky");
     case 1:
       weatherImage.style.backgroundImage =
-        "url('../assets/img/mainly-clear.png')";
+        "url('./assets/img/mainly-clear.png')";
       return (wmoValue = "Mainly clear");
     case 2:
       weatherImage.style.backgroundImage =
-        "url('/assets/img/partly-cloudy.png')";
+        "url('./assets/img/partly-cloudy.png')";
       return (wmoValue = "Partly cloudy");
     case 3:
-      weatherImage.style.backgroundImage = "url('/assets/img/overcast.png')";
+      weatherImage.style.backgroundImage = "url('./assets/img/overcast.png')";
       return (wmoValue = "Overcast");
     case 45:
       return (wmoValue = "Fog");
