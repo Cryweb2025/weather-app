@@ -16,8 +16,11 @@ const isDayOrNight = document.getElementById("is-don");
 const sunSet = document.getElementById("sunset");
 const sunRise = document.getElementById("sunrise");
 const weatherImage = document.getElementById("weather-img");
+const sunshineDuration = document.getElementById("sun-dur");
+const uvIndex = document.getElementById("uv-index");
+const dayDuration = document.getElementById("day-dur");
 
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear(); // set footer year
 
 async function fetchWeather() {
   const { data } = await axios.get(
@@ -36,7 +39,6 @@ fetchWeather();
 
 async function fetchWeatherLocation(latitude, longitude) {
   const { data } = await axios.get(
-    // `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current=temperature_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m,weather_code`
     `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,sunset,sunrise,uv_index_max,uv_index_clear_sky_max,sunshine_duration,daylight_duration,wind_gusts_10m_max,wind_speed_10m_max,wind_direction_10m_dominant,apparent_temperature_max,apparent_temperature_min,weather_code,et0_fao_evapotranspiration,shortwave_radiation_sum,precipitation_probability_max,precipitation_hours,precipitation_sum,snowfall_sum,showers_sum,rain_sum&hourly=temperature_2m&current=temperature_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m,weather_code,rain,is_day&timezone=auto`
   );
   console.log(data);
@@ -69,6 +71,9 @@ async function fetchWeatherLocation(latitude, longitude) {
     time,
     sunset,
     sunrise,
+    sunshine_duration,
+    uv_index_max,
+    daylight_duration,
   } = daily;
 
   const {
@@ -111,10 +116,18 @@ async function fetchWeatherLocation(latitude, longitude) {
   // Sun today
   sunRise.textContent = sunrise[0].split("T")[1] + " AM";
   sunSet.textContent = sunset[0].split("T")[1] + " PM";
+  sunshineDuration.textContent +=
+    " " + ceilToDecimals(sunshine_duration[0] / 3600, 2) + " hours";
+
+  // Other
+  uvIndex.textContent += " " + uv_index_max[0];
+  dayDuration.textContent +=
+    " " + ceilToDecimals(daylight_duration[0] / 3600, 2) + " hours";
 
   //   console.log(wmo);
 }
 
+// check weather code and set weather bg image
 function checkWmoCode(weather_code) {
   let wmoValue;
   switch (weather_code) {
@@ -190,7 +203,14 @@ function checkWmoCode(weather_code) {
   }
 }
 
+// check is day or night
 function checkIsDay(isDay) {
   if (isDay) return " is Day";
   else return " is Night";
+}
+
+// round float numbers
+function ceilToDecimals(num, decimals) {
+  const factor = Math.pow(10, decimals);
+  return Math.ceil(num * factor) / factor;
 }
