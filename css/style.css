@@ -86,7 +86,8 @@ main {
 .weather-img {
   width: 64px;
   height: 64px;
-  /* border: 1px solid white; */
+  margin-top: 24px;
+  margin-right: 30px;
 }
 
 .date-info {
