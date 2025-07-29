@@ -20,6 +20,8 @@ const sunshineDuration = document.getElementById("sun-dur");
 const uvIndex = document.getElementById("uv-index");
 const dayDuration = document.getElementById("day-dur");
 
+const ctx = document.getElementById("myChart");
+
 document.getElementById("year").textContent = new Date().getFullYear(); // set footer year
 
 async function fetchWeather() {
@@ -125,6 +127,33 @@ async function fetchWeatherLocation(latitude, longitude) {
     " " + ceilToDecimals(daylight_duration[0] / 3600, 2) + " hours";
 
   //   console.log(wmo);
+
+  // Temp bar for 7 days
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: time,
+      datasets: [
+        {
+          label: "Temperature min",
+          data: temperature_2m_min,
+          borderWidth: 1,
+        },
+        {
+          label: "Temperature max",
+          data: temperature_2m_max,
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
 }
 
 // check weather code and set weather bg image
